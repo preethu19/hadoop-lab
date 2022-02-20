@@ -1,5 +1,6 @@
 Create a folder Hadoop in desktop and copy tar file into it
 Run "tar xzvf hadoop-3.2.2.tar.gz"
+Run "mv hadoop-3.2.2 hadoop2"
 Run "whereis jvm" to get path of jvm folder
 export JAVA_HOME=<jvm_folder_path>/java-11-openjdk-amd64/ (for java version run "java -version")
 
