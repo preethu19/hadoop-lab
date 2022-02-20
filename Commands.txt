@@ -1,0 +1,17 @@
+Create a folder Hadoop in desktop and copy tar file into it
+Run "tar xzvf hadoop-3.2.2.tar.gz"
+Run "whereis jvm" to get path of jvm folder
+export JAVA_HOME=<jvm_folder_path>/java-11-openjdk-amd64/ (for java version run "java -version")
+
+from hadoop2 folder run "bin/hadoop version" to check installation
+
+export HADOOP_HOME=/mnt/c/Hadoop/hadoop2/
+export CLASSPATH="$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.2.2.jar:$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.2.2.jar:$HADOOP_HOME/share/hadoop/common/hadoop-common-3.2.2.jar:$HADOOP_HOME/lib/*"
+
+create a folder with your usn and write driver.java mapper.java reducer.java and copy data file into it
+
+javac -d . mapper.java reducer.java driver.java
+create Manifest.txt file with Main-Class: <package-name>.driver
+jar cfm lab.jar Manifest.txt temp/*.class
+$HADOOP_HOME/bin/hadoop jar lab.jar tem.txt output
+cat output/*
